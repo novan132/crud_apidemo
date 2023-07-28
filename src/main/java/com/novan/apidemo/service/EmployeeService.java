@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EmployeeService {
     // save employee
-    void addEmployee(Employee employee);
+    Employee addEmployee(Employee employee);
 
     // get employee
     List<Employee> getAllEmployees();
@@ -15,7 +15,7 @@ public interface EmployeeService {
     Employee findById(Integer id);
 
     // update employee
-    void updateEmployee(Employee employee);
+    Employee updateEmployee(Employee employee);
 
     // delete employee
     Boolean deleteById(Integer id);

@@ -4,6 +4,7 @@ import com.novan.apidemo.model.Employee;
 import com.novan.apidemo.repository.JpaEmployeeRepository;
 import com.novan.apidemo.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import static java.lang.Boolean.*;
 
 @RequiredArgsConstructor
 @Service
+@Qualifier(value = "postgreService")
 public class JpaEmployeeServiceImpl implements EmployeeService {
     private final JpaEmployeeRepository jpaEmployeeRepository;
     @Override

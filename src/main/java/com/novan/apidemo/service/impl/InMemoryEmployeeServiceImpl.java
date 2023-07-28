@@ -4,12 +4,14 @@ import com.novan.apidemo.model.Employee;
 import com.novan.apidemo.repository.InMemoryEmployeeRepository;
 import com.novan.apidemo.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 @Service
+@Qualifier(value = "inMemoryService")
 public class InMemoryEmployeeServiceImpl implements EmployeeService {
     private final InMemoryEmployeeRepository inMemoryEmployeeRepository;
 

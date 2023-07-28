@@ -15,7 +15,7 @@ public interface EmployeeService {
     Employee findById(Integer id);
 
     // update employee
-    Employee updateEmployee(Employee employee);
+    Employee updateEmployee(Integer id, Employee employee);
 
     // delete employee
     Boolean deleteById(Integer id);

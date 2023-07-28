@@ -40,7 +40,7 @@ public class EmployeeResource {
 
     @PutMapping("{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable("id") Integer id, @RequestBody Employee employee) {
-        return ResponseEntity.ok(employeeService.updateEmployee(employee));
+        return ResponseEntity.ok(employeeService.updateEmployee(id, employee));
     }
 
     @DeleteMapping("{id}")

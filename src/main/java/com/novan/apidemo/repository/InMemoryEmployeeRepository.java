@@ -34,14 +34,16 @@ public class InMemoryEmployeeRepository {
                 .orElseThrow();
     }
 
-    public Employee updateEmployee(Employee employee) {
+    public Employee updateEmployee(Integer id, Employee employee) {
         Employee emp_obj = DATABASE
                 .stream()
-                .filter(emp -> employee.getId().equals(emp.getId()))
+                .filter(emp -> id.equals(emp.getId()))
                 .findFirst()
                 .orElseThrow();
-        DATABASE.set(emp_obj.getId(), employee);
-        return emp_obj;
+        System.out.println(emp_obj.getFirstName() + "BLAAA");
+        employee.setId(emp_obj.getId());
+        DATABASE.set(id, employee);
+        return employee;
     }
 
     public Boolean deleteById(Integer id) {
